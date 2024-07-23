@@ -9,7 +9,7 @@ const app = express()
 
 dotenv.config();
 
-connectDB()
+
 app.use(express.json({ limit: "16kb" }))
 app.use(express.urlencoded({ extended: true, limit: "16kb" }))
 app.use(cors())
@@ -23,5 +23,7 @@ app.get("/", (req, res) => {
     return res.send("hello world")
 })
 
-app.listen(5000, () => { console.log("server running") })
+connectDB().then(() => {
+    app.listen(process.env.PORT, () => { console.log("server running") })
+})
 
