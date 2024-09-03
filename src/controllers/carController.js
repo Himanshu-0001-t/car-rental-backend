@@ -5,9 +5,7 @@ export const createCar = async (req, res) => {
     try {
         let { carType, carColor, carName, fuel, transmission, price, stock, brand, seat } = req.body
 
-
         if (!carType || !carColor || !carName || !fuel || !transmission || !price || !stock || !brand || !seat) {
-
             return res.status(400).json({ success: false, message: "all fields are required" })
         }
 

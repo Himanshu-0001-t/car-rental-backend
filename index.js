@@ -7,6 +7,8 @@ import dotenv from "dotenv";
 
 const app = express()
 
+connectDB()
+
 dotenv.config();
 
 
@@ -23,7 +25,5 @@ app.get("/", (req, res) => {
     return res.send("hello world")
 })
 
-connectDB().then(() => {
-    app.listen(process.env.PORT, () => { console.log("server running") })
-})
+app.listen(process.env.PORT, () => console.log("server running"))
 
