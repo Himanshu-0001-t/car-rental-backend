@@ -137,7 +137,7 @@ export const filter = async (req, res) => {
         }
 
         let total = cars.length
-        return res.status(200).json({ success: true, message: "cars feached successfully", total: total, cars })
+        return res.status(200).json({ success: true, message: "cars fetched successfully", total: total, cars })
 
     } catch (error) {
 

@@ -129,7 +129,7 @@ export const showAllBooking = async (req, res) => {
             carImages.push(car.carImage)
         }
 
-        return res.status(201).json({ success: true, message: "booking feached successfully", bookings, carImages })
+        return res.status(201).json({ success: true, message: "booking fetched successfully", bookings, carImages })
 
     } catch (error) {
 
